@@ -5,8 +5,11 @@
 #' easiest way to accomplish this is to set it in the `\code{.Renviron}` file in your
 #' home directory.
 #'
+#' Go [here](https://tempestwx.com/settings/tokens) to generate a personal access token.
+#'
 #' @param force force setting a new Tempest PAT for the current environment?
 #' @return atomic character vector containing the Tempest Weather PAT
+#' @references [Tempest API](https://weatherflow.github.io/Tempest/api/)
 #' @export
 tempest_pat <- function(force = FALSE) {
 

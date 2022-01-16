@@ -39,6 +39,30 @@ packageVersion("tempestwx")
 
 ```
 
+### Station Metadata
+
+```{r ex-01}
+st <- tempest_station_meta()
+
+str(st)
+```
+
+### Latest Observations
+
+```{r ex-02}
+str(
+  latest_observation(st$stations$station_id)
+)
+```
+
+### Device Observations
+
+```{r ex-03}
+str(
+  latest_device_observation(st$stations$devices[[1]]$device_id[2])$obs
+)
+```
+
 ## tempestwx Metrics
 
 ```{r cloc, echo=FALSE}

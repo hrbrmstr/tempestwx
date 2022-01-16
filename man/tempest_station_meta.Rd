@@ -16,8 +16,10 @@ list with station metadata
 Retrieve a list of your stations along with all connected devices.
 }
 \examples{
-# tempest_station_meta()
+\dontrun{
+tempest_station_meta()
+}
 }
 \references{
-\url{https://weatherflow.github.io/Tempest/api/}
+\href{https://weatherflow.github.io/Tempest/api/}{Tempest API}
 }

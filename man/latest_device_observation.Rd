@@ -21,8 +21,11 @@ Get the latest observation from one of your devices.
 The observations are not named but are in this order:
 }
 \examples{
-# latest_device_observation(st$stations$devices[[1]]$device_id[2])$obs
+\dontrun{
+st <- tempest_station_meta()
+latest_device_observation(st$stations$devices[[1]]$device_id[2])$obs
+}
 }
 \references{
-\url{https://weatherflow.github.io/Tempest/api/}
+\href{https://weatherflow.github.io/Tempest/api/}{Tempest API}
 }

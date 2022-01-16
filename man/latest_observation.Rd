@@ -18,8 +18,11 @@ list with station metadata, configured, units and point-in-time observation
 Get the latest most recent observation for a station.
 }
 \examples{
-# latest_observation(st$stations$station_id)
+\dontrun{
+st <- tempest_station_meta()
+latest_observation(st$stations$station_id)
+}
 }
 \references{
-\url{https://weatherflow.github.io/Tempest/api/}
+\href{https://weatherflow.github.io/Tempest/api/}{Tempest API}
 }

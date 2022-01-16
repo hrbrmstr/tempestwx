@@ -4,11 +4,13 @@
 #'
 #' @param station_id (chr) station id
 #' @param pat see [tempest_pat()]
-#' @references <https://weatherflow.github.io/Tempest/api/>
 #' @return list with station metadata, configured, units and point-in-time observation
 #' @export
-#' @examples
-#' # latest_observation(st$stations$station_id)
+#' @references [Tempest API](https://weatherflow.github.io/Tempest/api/)
+#' @examples \dontrun{
+#' st <- tempest_station_meta()
+#' latest_observation(st$stations$station_id)
+#' }
 latest_observation <- function(station_id, pat = tempest_pat()) {
 
   httr::GET(

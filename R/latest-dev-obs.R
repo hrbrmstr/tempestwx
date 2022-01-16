@@ -30,10 +30,12 @@
 #' @param device_id (chr) device id
 #' @param pat see [tempest_pat()]
 #' @return list with device metadata, configured, units and point-in-time observation
-#' @references <https://weatherflow.github.io/Tempest/api/>
+#' @references [Tempest API](https://weatherflow.github.io/Tempest/api/)
 #' @export
-#' @examples
-#' # latest_device_observation(st$stations$devices[[1]]$device_id[2])$obs
+#' @examples \dontrun{
+#' st <- tempest_station_meta()
+#' latest_device_observation(st$stations$devices[[1]]$device_id[2])$obs
+#' }
 latest_device_observation <- function(device_id, pat = tempest_pat()) {
 
   httr::GET(

@@ -18,3 +18,9 @@ personal access token residing in the environment variable \code{TEMPEST_PAT}. T
 easiest way to accomplish this is to set it in the \verb{\code{.Renviron}} file in your
 home directory.
 }
+\details{
+Go \href{https://tempestwx.com/settings/tokens}{here} to generate a personal access token.
+}
+\references{
+\href{https://weatherflow.github.io/Tempest/api/}{Tempest API}
+}

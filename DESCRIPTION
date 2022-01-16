@@ -1,6 +1,6 @@
 Package: tempestwx
 Type: Package
-Title: Tools To Query Tempest Weather Station Data
+Title: Tools To Query WeatherFlow Tempest Weather Station Data
 Version: 0.1.0
 Date: 2022-01-15
 Authors@R: c(
@@ -8,14 +8,17 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-5670-2640"))
   )
 Maintainer: Bob Rudis <bob@rud.is>
-Description: The Tempest Weather System combines state-of-the-art sensors and a sleek, 
-    wireless design with WeatherFlow’s proprietary modeling capabilities to seamlessly 
-    present validated weather data and improved forecasts. The Tempest API & Developer 
-    Platform empowers a growing community of developers to build useful applications and 
-    integrations by providing access to enhanced data and forecasts from the Tempest System.
-    Tools are provided to query Tempest Weather station data.
-URL: https://git.rud.is/hrbrmstr/tempestwx
-BugReports: https://git.rud.is/hrbrmstr/tempestwx/issues
+Description: The WeatherFlow (<https://weatherflow.com>) Tempest Weather System combines 
+    state-of-the-art sensors and a sleek, wireless design with WeatherFlow’s proprietary
+    modeling capabilities to seamlessly present validated weather data and improved 
+    forecasts. The Tempest API & Developer Platform empowers a growing community of 
+    developers to build useful applications and integrations by providing access to 
+    enhanced data and forecasts from the Tempest System. Tools are provided to query 
+    Tempest Weather station data.
+URL: https://github.com/hrbrmstr/tempestwx
+BugReports: https://github.com/hrbrmstr/tempestwx/issues
+RequiresCompilation: yes
+SystemRequirements: C++11
 Encoding: UTF-8
 License: MIT + file LICENSE
 Suggests:

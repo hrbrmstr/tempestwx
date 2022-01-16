@@ -4,23 +4,26 @@
 \name{tempestwx}
 \alias{tempestwx}
 \alias{tempestwx-package}
-\title{Tools To Query Tempest Weather Station Data}
+\title{Tools To Query WeatherFlow Tempest Weather Station Data}
 \description{
-The Tempest Weather System combines state-of-the-art sensors and a sleek,
-wireless design with WeatherFlow’s proprietary modeling capabilities to seamlessly
-present validated weather data and improved forecasts. The Tempest API & Developer
-Platform empowers a growing community of developers to build useful applications and
-integrations by providing access to enhanced data and forecasts from the Tempest System.
-Tools are provided to query Tempest Weather station data.
+The \href{https://weatherflow.com}{WeatherFlow} Tempest Weather System combines
+state-of-the-art sensors and a sleek, wireless design with WeatherFlow’s proprietary
+modeling capabilities to seamlessly present validated weather data and improved forecasts.
+The Tempest API & Developer Platform empowers a growing community of developers to build
+useful applications and integrations by providing access to enhanced data and forecasts
+from the Tempest System. Tools are provided to query Tempest Weather station data.
 }
 \references{
-\url{https://weatherflow.github.io/Tempest/api/}
+\itemize{
+\item \href{https://weatherflow.github.io/Tempest/api/}{Tempest API}
+\item \href{https://weatherflow.com}{WeatherFlow}
+}
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://git.rud.is/hrbrmstr/tempestwx}
-  \item Report bugs at \url{https://git.rud.is/hrbrmstr/tempestwx/issues}
+  \item \url{https://github.com/hrbrmstr/tempestwx}
+  \item Report bugs at \url{https://github.com/hrbrmstr/tempestwx/issues}
 }
 
 }
