@@ -41,6 +41,16 @@ The following functions are implemented:
 -   `tempest_station_meta`: Get station metadata
 -   `udp_logger`: Log local UDP Tempest messages to a file
 
+### TODO
+
+Cover the following API endpoints:
+
+-   Parameterized
+    [`/observations/device/{device_id}`](https://weatherflow.github.io/Tempest/api/swagger/#!/observations/getObservationsByDeviceId)
+-   Support units parameters
+    for[`/better_forecast`](https://weatherflow.github.io/Tempest/api/swagger/#!/forecast/getBetterForecast)
+-   Add names to unnamed observations results
+
 ## Installation
 
 ``` r
@@ -80,7 +90,7 @@ str(st)
 ##   .. ..$ share_with_wf: logi TRUE
 ##   .. ..$ share_with_wu: logi FALSE
 ##   .. ..$ elevation    : num 43.1
-##   ..$ last_modified_epoch    : int 1642338598
+##   ..$ last_modified_epoch    : int 1642342198
 ##   ..$ created_epoch          : int 1642272495
 ##   ..$ devices                :List of 1
 ##   .. ..$ :'data.frame':  2 obs. of  8 variables:
@@ -140,8 +150,8 @@ str(
 ##   ..$ units_other    : chr "imperial"
 ##  $ outdoor_keys : chr [1:31] "timestamp" "air_temperature" "barometric_pressure" "station_pressure" ...
 ##  $ obs          :'data.frame':   1 obs. of  31 variables:
-##   ..$ timestamp                      : int 1642341916
-##   ..$ air_temperature                : num -13.1
+##   ..$ timestamp                      : int 1642342216
+##   ..$ air_temperature                : num -12.9
 ##   ..$ barometric_pressure            : num 1026
 ##   ..$ station_pressure               : num 1026
 ##   ..$ sea_level_pressure             : num 1031
@@ -153,22 +163,22 @@ str(
 ##   ..$ precip_accum_local_yesterday   : num 12.1
 ##   ..$ precip_minutes_local_day       : int 0
 ##   ..$ precip_minutes_local_yesterday : int 23
-##   ..$ wind_avg                       : num 0.6
-##   ..$ wind_direction                 : int 36
-##   ..$ wind_gust                      : num 1
-##   ..$ wind_lull                      : num 0.2
-##   ..$ solar_radiation                : int 253
-##   ..$ uv                             : num 1.3
-##   ..$ brightness                     : int 30409
+##   ..$ wind_avg                       : num 0.4
+##   ..$ wind_direction                 : int 42
+##   ..$ wind_gust                      : num 0.8
+##   ..$ wind_lull                      : num 0
+##   ..$ solar_radiation                : int 265
+##   ..$ uv                             : num 0.7
+##   ..$ brightness                     : int 31742
 ##   ..$ lightning_strike_count         : int 0
 ##   ..$ lightning_strike_count_last_1hr: int 0
 ##   ..$ lightning_strike_count_last_3hr: int 0
-##   ..$ feels_like                     : num -13.1
-##   ..$ heat_index                     : num -13.1
-##   ..$ wind_chill                     : num -13.1
-##   ..$ dew_point                      : num -21.3
-##   ..$ wet_bulb_temperature           : num -14.4
-##   ..$ delta_t                        : num 1.3
+##   ..$ feels_like                     : num -12.9
+##   ..$ heat_index                     : num -12.9
+##   ..$ wind_chill                     : num -12.9
+##   ..$ dew_point                      : num -21.2
+##   ..$ wet_bulb_temperature           : num -14.3
+##   ..$ delta_t                        : num 1.4
 ##   ..$ air_density                    : num 1.37
 ##   ..$ pressure_trend                 : chr "rising"
 ```
@@ -179,7 +189,7 @@ str(
 str(
   latest_device_observation(st$stations$devices[[1]]$device_id[2])$obs
 )
-##  num [1, 1:22] 1.64e+09 1.60e-01 6.40e-01 9.60e-01 3.60e+01 ...
+##  num [1, 1:22] 1.64e+09 0.00 4.10e-01 8.30e-01 4.20e+01 ...
 ```
 
 ### Latest Forecast
@@ -452,11 +462,11 @@ knitr::kable(
 
 | Lang | # Files |  (%) | LoC |  (%) | Blank lines |  (%) | # Lines |  (%) |
 |:-----|--------:|-----:|----:|-----:|------------:|-----:|--------:|-----:|
-| R    |       9 | 0.32 |  86 | 0.22 |          33 | 0.17 |     118 | 0.34 |
-| C++  |       2 | 0.07 |  54 | 0.14 |          28 | 0.15 |      15 | 0.04 |
+| R    |       9 | 0.32 |  86 | 0.22 |          33 | 0.17 |     118 | 0.33 |
+| C++  |       2 | 0.07 |  54 | 0.14 |          28 | 0.14 |      15 | 0.04 |
 | YAML |       2 | 0.07 |  35 | 0.09 |          10 | 0.05 |       2 | 0.01 |
-| Rmd  |       1 | 0.04 |  20 | 0.05 |          24 | 0.13 |      40 | 0.11 |
-| SUM  |      14 | 0.50 | 195 | 0.50 |          95 | 0.50 |     175 | 0.50 |
+| Rmd  |       1 | 0.04 |  20 | 0.05 |          27 | 0.14 |      45 | 0.12 |
+| SUM  |      14 | 0.50 | 195 | 0.50 |          98 | 0.50 |     180 | 0.50 |
 
 clock Package Metrics for tempestwx
 

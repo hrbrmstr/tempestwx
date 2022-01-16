@@ -23,6 +23,14 @@ The following functions are implemented:
 hrbrpkghelpr::describe_ingredients()
 ```
 
+### TODO
+
+Cover the following API endpoints:
+
+- Parameterized [`/observations/device/{device_id}`](https://weatherflow.github.io/Tempest/api/swagger/#!/observations/getObservationsByDeviceId)
+- Support units parameters for[`/better_forecast`](https://weatherflow.github.io/Tempest/api/swagger/#!/forecast/getBetterForecast)
+- Add names to unnamed observations results
+
 ## Installation
 
 ```{r install-ex, results='asis', echo=FALSE, cache=FALSE}
