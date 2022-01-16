@@ -4,9 +4,17 @@
 \name{tempestwx}
 \alias{tempestwx}
 \alias{tempestwx-package}
-\title{...}
+\title{Tools To Query Tempest Weather Station Data}
 \description{
-A good description goes here otherwise CRAN checks fail.
+The Tempest Weather System combines state-of-the-art sensors and a sleek,
+wireless design with WeatherFlow’s proprietary modeling capabilities to seamlessly
+present validated weather data and improved forecasts. The Tempest API & Developer
+Platform empowers a growing community of developers to build useful applications and
+integrations by providing access to enhanced data and forecasts from the Tempest System.
+Tools are provided to query Tempest Weather station data.
+}
+\references{
+\url{https://weatherflow.github.io/Tempest/api/}
 }
 \seealso{
 Useful links:
