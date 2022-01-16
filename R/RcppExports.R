@@ -7,7 +7,7 @@
 #' can be performed until terminated.
 #'
 #' @param path full path (no expansion is performed) to a file
-#' @references <https://weatherflow.github.io/Tempest/api/>
+#' @references <https://weatherflow.github.io/Tempest/api/udp/v171/>
 #' @return nothing!
 #' @export
 #' @examples

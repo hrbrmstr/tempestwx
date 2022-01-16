@@ -63,6 +63,15 @@ str(
 )
 ```
 
+### Latest Forecast
+
+```{r ex-04}
+knitr::kable(
+  latest_forecast(st$stations$station_id[1])$forecast,
+  format = "markdown"
+)
+```
+
 ## tempestwx Metrics
 
 ```{r cloc, echo=FALSE}
