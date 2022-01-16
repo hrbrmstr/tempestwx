@@ -10,7 +10,7 @@ udp_logger(path)
 \item{path}{full path (no expansion is performed) to a file}
 }
 \value{
-nothing
+nothing!
 }
 \description{
 This dedicates the R session to logging UDP packets to a file. No other operations

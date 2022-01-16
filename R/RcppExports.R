@@ -8,7 +8,7 @@
 #'
 #' @param path full path (no expansion is performed) to a file
 #' @references <https://weatherflow.github.io/Tempest/api/>
-#' @return nothing
+#' @return nothing!
 #' @export
 #' @examples
 #' # udp_logger("/tmp/logger.json")

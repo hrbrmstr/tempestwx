@@ -15,7 +15,7 @@ using namespace Rcpp;
 //'
 //' @param path full path (no expansion is performed) to a file
 //' @references <https://weatherflow.github.io/Tempest/api/>
-//' @return nothing
+//' @return nothing!
 //' @export
 //' @examples
 //' # udp_logger("/tmp/logger.json")
@@ -50,7 +50,11 @@ void udp_logger(std::string path) {
 
     recvfrom(s, buf, sizeof(buf)-1, 0, (sockaddr *)&si_other, &slen);
 
-    file_stream << buf << std::endl;
+    std::string record = buf;
+
+    record.erase(remove(record.begin(), record.end(), 0x01), record.end());
+
+    file_stream << record << std::endl;
 
     Rcpp::checkUserInterrupt();
 
