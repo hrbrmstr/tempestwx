@@ -9,6 +9,8 @@ using namespace Rcpp;
 #include <functional>
 #include <string.h>
 
+#define BUF_LEN 1024
+
 /* Check for interrupt without long jumping */
 void check_interrupt_fn(void *dummy) {
   R_CheckUserInterrupt();
@@ -63,7 +65,7 @@ void udp_logger(std::string path) {
 
   while(processing) {
 
-    char buf[10*1024];
+    char buf[BUF_LEN];
     unsigned slen = sizeof(sockaddr);
 
     recvfrom(s, buf, sizeof(buf)-1, 0, (sockaddr *)&si_other, &slen);
@@ -127,7 +129,7 @@ void udp_callback_logger(Function f) {
 
   while(processing) {
 
-    char buf[10*1024];
+    char buf[BUF_LEN];
     unsigned slen = sizeof(sockaddr);
 
     recvfrom(s, buf, sizeof(buf)-1, 0, (sockaddr *)&si_other, &slen);
