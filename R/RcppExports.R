@@ -16,3 +16,18 @@ udp_logger <- function(path) {
     invisible(.Call(`_tempestwx_udp_logger`, path))
 }
 
+#' Log local UDP Tempest messages to a file
+#'
+#' This dedicates the R session to logging UDP packets to a file. No other operations
+#' can be performed until terminated.
+#'
+#' @param f R function callback (one param: length 1 chr)
+#' @references <https://weatherflow.github.io/Tempest/api/udp/v171/>
+#' @return nothing!
+#' @export
+#' @examples
+#' # udp_callback_logger(function(x) writeLines(x))
+udp_callback_logger <- function(f) {
+    invisible(.Call(`_tempestwx_udp_callback_logger`, f))
+}
+

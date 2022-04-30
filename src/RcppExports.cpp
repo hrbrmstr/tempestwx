@@ -20,9 +20,20 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// udp_callback_logger
+void udp_callback_logger(Function f);
+RcppExport SEXP _tempestwx_udp_callback_logger(SEXP fSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Function >::type f(fSEXP);
+    udp_callback_logger(f);
+    return R_NilValue;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_tempestwx_udp_logger", (DL_FUNC) &_tempestwx_udp_logger, 1},
+    {"_tempestwx_udp_callback_logger", (DL_FUNC) &_tempestwx_udp_callback_logger, 1},
     {NULL, NULL, 0}
 };
 

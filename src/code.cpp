@@ -68,13 +68,9 @@ void udp_logger(std::string path) {
     char buf[BUF_LEN];
     unsigned slen = sizeof(sockaddr);
 
-    recvfrom(s, buf, sizeof(buf)-1, 0, (sockaddr *)&si_other, &slen);
+    int n = recvfrom(s, buf, sizeof(buf)-1, 0, (sockaddr *)&si_other, &slen);
 
-    std::string record = buf;
-
-    record.erase(remove(record.begin(), record.end(), 0x01), record.end());
-
-    file_stream << record << std::endl;
+    file_stream << std::string(buf, 0, n) << std::endl;
 
     if (pending_interrupt()) {
       processing = false;
@@ -132,13 +128,9 @@ void udp_callback_logger(Function f) {
     char buf[BUF_LEN];
     unsigned slen = sizeof(sockaddr);
 
-    recvfrom(s, buf, sizeof(buf)-1, 0, (sockaddr *)&si_other, &slen);
+    int n = recvfrom(s, buf, sizeof(buf)-1, 0, (sockaddr *)&si_other, &slen);
 
-    std::string record = buf;
-
-    record.erase(remove(record.begin(), record.end(), 0x01), record.end());
-
-    LogicalVector res = f(CharacterVector(record));
+    LogicalVector res = f(CharacterVector(std::string(buf, 0, n)));
 
     if ((is_true(all(res))) || pending_interrupt()) {
       processing = false;
@@ -147,5 +139,5 @@ void udp_callback_logger(Function f) {
   }
 
   close(s);
-   
+
 }
